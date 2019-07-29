@@ -18,7 +18,7 @@ echo       [97m^|______^|              ^|___/ ^|___/[0m
 echo.
 
 set /p "alias=[93m[[0m[97m?[0m[93m] Alias:[0m [97m"&echo [0m>nul
-set /p "redirect=[93m[[0m[97m?[0m[93m] Redirect URL [97m(leave blank for invalid response)[0m[93m:[0m [97m"&echo [0m>nul
+set /p "redirect=[93m[[0m[97m?[0m[93m] Redirect URL [93m([97mleave blank for invalid response[0m[93m):[0m [97m"&echo [0m>nul
 if "%redirect%" equ "" (set "redirect=http://"&set "redirect_title=ERR_INVALID_REDIRECT") else (set "redirect_title=%redirect%")
 
 echo ^<?php>> "index.php"
