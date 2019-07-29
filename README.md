@@ -1,7 +1,7 @@
 <p align="center">
 	<b>IP-Logger</b>
 	<br>
-	<i>Simple IP, User-Agent capture tool.</i>
+	<i>Simple IP & User-Agent capture tool.</i>
 	<br><br><br>
 	<img alt="Sreenshot_1" src="https://user-images.githubusercontent.com/48186982/62072937-f4210800-b23f-11e9-968f-e46a76268cfa.png">
 </p>
