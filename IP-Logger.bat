@@ -7,6 +7,16 @@ for %%i in ("index.php"	"log.txt"	"ips.txt"	"err.vbs") do (if exist %%~i del /f 
 (php -v >nul 2>&1) || ((echo x=msgbox^("PHP is not installed!"^)> "err.vbs")&start "" "err.vbs"&exit)
 (start /min "" "ssh") || ((echo x=msgbox^("SSH is not installed!"^)> "err.vbs")&start "" "err.vbs"&exit)
 
+echo  [93m _____ _____[0m   _
+echo  [93m^|_   _^|  __ \[0m [97m^| ^|[0m
+echo  [93m  ^| ^| ^| ^|__)[0m  [97m^| ^|     ___   __ _  __ _  ___ _ __[0m
+echo  [93m  ^| ^| ^|  ___/[0m [97m^| ^|    / _ \ / _` ^|/ _` ^|/ _ \ '__^|[0m
+echo  [93m _^| ^|_^| ^|[0m     [97m^| ^|___^| (_) ^| (_^| ^| (_^| ^|  __/ ^|[0m
+echo  [93m^|_____^|_^|[0m     [97m^|______\___/ \__, ^|\__, ^|\___^|_^|[0m
+echo        [97m______                __/ ^| __/ ^|[0m
+echo       [97m^|______^|              ^|___/ ^|___/[0m
+echo.
+
 set /p "alias=[93m[[0m[97m?[0m[93m] Alias:[0m [97m"&echo [0m>nul
 set /p "redirect=[93m[[0m[97m?[0m[93m] Redirect URL [97m(leave blank for invalid response)[0m[93m:[0m [97m"&echo [0m>nul
 if "%redirect%" equ "" (set "redirect=http://"&set "redirect_title=ERR_INVALID_REDIRECT") else (set "redirect_title=%redirect%")
