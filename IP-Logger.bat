@@ -33,9 +33,10 @@ echo [97m[[0m[93m*[0m[97m] Starting PHP server...[0m
 start /b "" "php" -S localhost:80 >nul 2>&1
 @ping localhost -n 1 >nul
 
-echo [97m[[0m[93m*[0m[97m] Starting SSH tunelling...[0m
+echo | set /p ".=[97m[[0m[93m*[0m[97m] Starting SSH tunelling...[0m "
 start /b "" "ssh" -R %alias%:80:localhost:80 serveo.net >nul 2>&1
 @ping localhost -n 2 >nul
+echo [93m^([97mhttp://%alias%.serveo.net[93m^)[0m
 
 title 0 requests, [http://%alias%.serveo.net --^> %redirect_title%]
 echo.
