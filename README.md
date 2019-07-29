@@ -3,7 +3,7 @@
 	<br>
 	<i>Simple IP & User-Agent capture tool.</i>
 	<br><br><br>
-	<img alt="Sreenshot_1" src="https://user-images.githubusercontent.com/48186982/62072937-f4210800-b23f-11e9-968f-e46a76268cfa.png">
+	<img alt="Sreenshot_1" src="https://user-images.githubusercontent.com/48186982/62075980-d5723f80-b246-11e9-87b5-4d0a293da838.png">
 </p>
 
 # Usage
