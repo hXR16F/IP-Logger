@@ -7,8 +7,7 @@
 </p>
 
 # Usage
-Run by double-clicking *(make sure you have installed **PHP** and **SSH** client on your machine)*:
-> IP-Logger.bat
+Run **IP-Logger** by double-clicking *(make sure you have installed **PHP** and **SSH** client on your machine)*:
 
 1. Specify alias for website *(abc -> abc.serveo.net)*
 2. Specify URL for redirecting *(selecting **https://google.com** will move you to it after you open **abc.serveo.net**)*
