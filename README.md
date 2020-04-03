@@ -21,3 +21,7 @@ Run **IP-Logger.bat** by double-clicking *(make sure you have installed **PHP** 
 # Notes
 * It has anti-bot protection (won't dump the same IP addresses).
 * It will save the output to **capture.txt**.
+
+# Donate
+If you support my work or like my projects, you can donate me some money. Thank you 💙\
+BTC: `bc1q9trutvumrfuwrdwj377xd7u2flyp527j6t6qh9`
