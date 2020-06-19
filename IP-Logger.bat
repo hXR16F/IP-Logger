@@ -1,7 +1,11 @@
 :: Programmed by hXR16F
 :: hXR16F.ar@gmail.com
 
-@echo off & mode 90,28 & consetbuffer.exe 300 400 & color 07 & ansicon -p
+@echo off
+:: mode 90,28
+:: consetbuffer.exe 300 400
+:: ansicon -p
+color 07
 for %%i in ("index.php"	"log.txt"	"ips.txt"	"err.vbs") do (if exist %%~i del /f /q %%~i >nul)
 
 (php -v >nul 2>&1) || ((echo x=msgbox^("PHP is not installed!"^)> "err.vbs")&start "" "err.vbs"&exit)
@@ -22,19 +26,11 @@ set /p "redirect=[93m[[0m[97m?[0m[93m] Redirect URL [93m([97mleave blank 
 if "%redirect%" equ "" (set "redirect=http://"&set "redirect_title=ERR_INVALID_REDIRECT") else (set "redirect_title=%redirect%")
 
 echo ^<?php>> "index.php"
-echo 	if (!empty($_SERVER['HTTP_CLIENT_IP'])) {>> "index.php"
-echo 		$ipaddress = $_SERVER['HTTP_CLIENT_IP'];>> "index.php"
-echo 	} elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {>> "index.php"
-echo 		$ipaddress = $_SERVER['HTTP_X_FORWARDED_FOR'];>> "index.php"
-echo 	} else {>> "index.php"
-echo 		$ipaddress = $_SERVER['REMOTE_ADDR'];>> "index.php"
-echo 	}>> "index.php"
-echo 	$browser = $_SERVER['HTTP_USER_AGENT'];>> "index.php"
-echo 	$file = 'log.txt';>> "index.php"
-echo 	$fp = fopen($file, 'a');>> "index.php"
-echo 	fwrite($fp, $ipaddress."	");>> "index.php"
-echo 	fwrite($fp, $browser."\r\n");>> "index.php"
-echo 	fclose($fp);>> "index.php">> "index.php"
+echo 	$ip = isset($_SERVER['HTTP_CLIENT_IP']) ? $_SERVER['HTTP_CLIENT_IP'] : isset($_SERVER['HTTP_X_FORWARDED_FOR']) ? $_SERVER['HTTP_X_FORWARDED_FOR'] : $_SERVER['REMOTE_ADDR'];>> "index.php"
+echo 	$useragent = $_SERVER['HTTP_USER_AGENT'];>> "index.php"
+echo 	$file = fopen("log.txt", "a");>> "index.php"
+echo 	fwrite($file, "\n" . $ip . "	" . $useragent);>> "index.php"
+echo 	fclose($file);>> "index.php"
 echo 	header("Location: %redirect%");>> "index.php"
 echo ?^>>> "index.php"
 
@@ -43,12 +39,13 @@ echo [97m[[0m[93m*[0m[97m] Starting PHP server...[0m
 start /b "" "php" -S localhost:80 >nul 2>&1
 @ping localhost -n 1 >nul
 
-echo | set /p ".=[97m[[0m[93m*[0m[97m] Starting SSH tunelling...[0m "
+REM echo | set /p ".=[97m[[0m[93m*[0m[97m] Starting SSH tunelling...[0m "
+<nul set /p "=[97m[[0m[93m*[0m[97m] Starting SSH tunelling...[0m "
 start /b "" "ssh" -R %alias%:80:localhost:80 serveo.net >nul 2>&1
 @ping localhost -n 2 >nul
-echo [93m^([97mhttp://%alias%.serveo.net[93m^)[0m
+echo [93m^([97mhttp://%alias%.serveousercontent.com[93m^)[0m
 
-title 0 requests, [http://%alias%.serveo.net --^> %redirect_title%]
+title 0 requests, [http://%alias%.serveousercontent.com --^> %redirect_title%]
 echo.
 echo [93m[[0m[97m*[0m[93m] IP Address  	User-Agent
 rem echo     ------------------------------[0m
@@ -72,7 +69,7 @@ if not exist "capture.txt" (
 		)
 		del /f /q "log.txt" >nul
 		set /a requests+=1
-		if not "!requests!" equ "1" (title !requests! requests, [http://%alias%.serveo.net --^> %redirect_title%]) else (title !requests! request, [http://%alias%.serveo.net --^> %redirect_title%])
+		if not "!requests!" equ "1" (title !requests! requests, [http://%alias%.serveousercontent.com --^> %redirect_title%]) else (title !requests! request, [http://%alias%.serveousercontent.com --^> %redirect_title%])
 	)
 	@ping localhost -n 2 >nul
 	goto :loop
