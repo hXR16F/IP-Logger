@@ -15,8 +15,8 @@ Don't forget to add them to **environment variable**! (click [here](https://www.
 # Usage
 Run **IP-Logger.bat** by double-clicking *(make sure you have installed **PHP** and **SSH** client on your machine)*:
 
-1. Specify alias for website *(abc -> abc.serveo.net)*.
-2. Specify URL for redirecting *(selecting **https://google.com** will move you to it after you open **abc.serveo.net**)*.
+1. Specify alias for website *(abc -> abc.serveousercontent.com)*.
+2. Specify URL for redirecting *(selecting **https://google.com** will move you to it after you open **abc.serveousercontent.com**)*.
 
 # Notes
 * It has anti-bot protection (won't dump the same IP addresses).
