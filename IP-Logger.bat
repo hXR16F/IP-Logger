@@ -39,7 +39,6 @@ echo [97m[[0m[93m*[0m[97m] Starting PHP server...[0m
 start /b "" "php" -S localhost:80 >nul 2>&1
 @ping localhost -n 1 >nul
 
-REM echo | set /p ".=[97m[[0m[93m*[0m[97m] Starting SSH tunelling...[0m "
 <nul set /p "=[97m[[0m[93m*[0m[97m] Starting SSH tunelling...[0m "
 start /b "" "ssh" -R %alias%:80:localhost:80 serveo.net >nul 2>&1
 @ping localhost -n 2 >nul
