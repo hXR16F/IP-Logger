@@ -5,7 +5,7 @@
 :: mode 90,28
 :: consetbuffer.exe 300 400
 :: ansicon -p
-color 07
+:: color 07
 for %%i in ("index.php"	"log.txt"	"ips.txt"	"err.vbs") do (if exist %%~i del /f /q %%~i >nul)
 
 (php -v >nul 2>&1) || ((echo x=msgbox^("PHP is not installed!"^)> "err.vbs")&start "" "err.vbs"&exit)
