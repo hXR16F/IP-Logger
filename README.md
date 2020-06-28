@@ -13,7 +13,7 @@
 Don't forget to add them to **environment variable**! (click [here](https://www.java.com/en/download/help/path.xml) to see how).
 
 # Usage
-Run **IP-Logger.bat** by double-clicking *(make sure you have installed **PHP** and **SSH** client on your machine)*:
+Run **IP-Logger.bat** *(make sure you have installed **PHP** and **SSH** client on your machine)*:
 
 1. Specify alias for website *(abc -> abc.serveousercontent.com)*.
 2. Specify URL for redirecting *(selecting **https://google.com** will move you to it after you open **abc.serveousercontent.com**)*.
