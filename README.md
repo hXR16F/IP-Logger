@@ -6,6 +6,9 @@
 	<img alt="Sreenshot_1" src="https://user-images.githubusercontent.com/48186982/62075980-d5723f80-b246-11e9-87b5-4d0a293da838.png">
 </p>
 
+# Warning
+This program is powered by [serveo.net](http://serveo.net) localhost tunneling service. If this website is down, it means that this program won't work.
+
 # Installation
 * Install [PHP](https://windows.php.net/download)
 * Install [SSH Client](https://github.com/PowerShell/Win32-OpenSSH/releases)
